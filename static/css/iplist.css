@@ -1,0 +1,33 @@
+*
+{
+margin:0;
+padding:0;
+}
+div
+{
+display:block;
+background-color:White;
+float:left;
+font-family:msyh;
+font-size:12pt;
+font-style:bold;
+}
+div.row
+{
+border:1px dotted;
+margin-bottom:5px;
+margin-left:5px;
+}
+a
+{
+width:160px;
+display:flex;
+}
+a.ping
+{
+color: blue;
+}
+a.Line_speed
+{
+color:Fuchsia;
+}

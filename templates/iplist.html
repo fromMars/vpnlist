@@ -1,0 +1,40 @@
+﻿{% load staticfiles %}
+
+<htmL>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href='{% static "css/iplist.css" %}' />
+<script type="text/javascript" src="{% static "js/jquery-1.11.0.js" %}"></script>
+<script type="text/javascript" src="{% static "js/iplist.js" %}"></script>
+</head>
+
+<body>
+<div class='title'>
+	<a class='no'>row number</a>
+    <a class='ip'>IP address</a>
+    <a class='nation'>region</a>
+    <a class='ping'>ping</a>
+    <a class='VPNSession'>session count</a>
+    <a class='Line_speed'>link speed</a>
+    <a class='Google_SE'>google ping</a>
+    <a class='ports'>ports</a>
+</div>
+{% for no, ip, nation, ping, session_count, link_speed, google_ping, ports in all_list %}
+	<div class='row' id='row_{{ no }}' 	onmouseover='mouse_over(this.id)' 
+										ondblclick='select_item(this.id, 1)' 
+										onclick='select_item(this.id, 0)' 
+										onmouseout='fade_out(this.id)'>
+		<a class='no'>{{ no }}</a>
+        <a class='ip'>{{ ip }}</a>
+        <a class='nation'>{{ nation }}</a>
+        <a class='ping'>{{ ping }}</a>
+        <a class='VPNSession'>{{ session_count }}</a>
+        <a class='Line_speed'>{{ link_speed }}</a>
+        <a class='Google_SE'>{{ google_ping }}</a>
+        <a class='ports'>{{ ports }}</a>
+	</div>
+{% endfor %}
+
+</body>
+
+</html>

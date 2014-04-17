@@ -1,0 +1,5 @@
+div#ping_history {display: inline; position: absolute; left: 360px;}
+div.ip:hover {color: orange;}
+span {display: inline-block; width: 160px;}
+div#ping_history span {width: 160px;}
+.error {background-color: red; color: white; font-size: 7pt;}

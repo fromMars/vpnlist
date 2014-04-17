@@ -1,0 +1,39 @@
+﻿{% load staticfiles %}
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>VPN server list</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}" />
+<script type="text/javascript" src="{% static "js/jquery-1.11.0.js" %}"></script>
+<script type="text/javascript" src="{% static "js/home.js" %}"></script>
+</head>
+
+<body>
+	<a href="#download">Client Download</a>
+	
+	<div id="server_list">
+		{% for ip, region in server_list %}
+		<div class="ip" id="{{ ip }}">
+			<span id="ip">{{ ip }}</span>
+			<span id="region">{{ region }}</span>
+			<div class="ping_history"></div>
+		</div>
+		{% endfor %}
+	</div>
+	
+	<div id="download">
+		<p>Please use right-click & save_as to download:
+		<a href="download/{{ server_file }}">{{ server_file }}</a>
+		<a href="download/{{ client_file }}">{{ client_file }}</a>
+	</div>
+	
+	<div>
+		<a href="iplist/">iplist</a>
+	</div>
+
+</body>
+
+
+
+</html>
